@@ -1,0 +1,31 @@
+{
+  "name": "@liamegan/fxhash-starter",
+  "version": "1.0.0",
+  "description": "Quickly scaffold an fxhash project",
+  "main": "bin/index.js",
+  "bin": {
+    "sweet-potato-peeler": "bin/index.js"
+  },
+  "engines": {
+    "node": ">= 14.0.0 < 17.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamegan/fxhash-starter.git"
+  },
+  "author": "Liam Egan <liam@wethecollective.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liamegan/fxhash-starter/issues"
+  },
+  "homepage": "https://github.com/liamegan/fxhash-starter#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "execa": "^5.0.0",
+    "fs-extra": "^9.1.0",
+    "yargs-parser": "^20.2.4"
+  }
+}
