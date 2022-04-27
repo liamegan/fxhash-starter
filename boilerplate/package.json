@@ -1,0 +1,36 @@
+{
+  "name": "fxhash-starter",
+  "version": "1.0.0",
+  "description": "A starter for fxhash projects.",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "rm -rf dist && parcel build src/index.html --no-source-maps --public-url '.' && cp ./public/* ./dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamegan/fxhash-starter.git"
+  },
+  "author": "Liam Egan <liam@wethecollective.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liamegan/fxhash-starter/issues"
+  },
+  "homepage": "https://github.com/liamegan/fxhash-starter#readme",
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ],
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.4.0",
+    "@parcel/transformer-sass": "^2.4.0",
+    "parcel": "^2.4.0"
+  },
+  "dependencies": {
+    "@liamegan1/fxhash-helpers": "^0.0.9",
+    "wtc-gl": "^1.0.0-beta.42",
+    "wtc-math": "^1.0.14"
+  }
+}
