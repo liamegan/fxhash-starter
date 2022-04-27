@@ -1,5 +1,5 @@
 {
-  "name": "@liamegan/fxhash-starter",
+  "name": "@liamegan1/fxhash-starter",
   "version": "1.0.0",
   "description": "Quickly scaffold an fxhash project",
   "main": "bin/index.js",
@@ -27,5 +27,12 @@
     "execa": "^5.0.0",
     "fs-extra": "^9.1.0",
     "yargs-parser": "^20.2.4"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
