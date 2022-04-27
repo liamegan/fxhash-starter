@@ -16,5 +16,5 @@ Once set up, your new project will contain a start script and a build script for
 
 ### default
 
-Perfect for the most basic of projects
+Perfect for the most basic of projects. Includes fx-helpers as a dependency and that's it.
 
