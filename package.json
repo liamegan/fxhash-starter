@@ -4,7 +4,7 @@
   "description": "Quickly scaffold an fxhash project",
   "main": "bin/index.js",
   "bin": {
-    "sweet-potato-peeler": "bin/index.js"
+    "fxhash-starter": "bin/index.js"
   },
   "engines": {
     "node": ">= 14.0.0 < 17.0.0"

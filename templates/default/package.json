@@ -29,8 +29,6 @@
     "parcel": "^2.4.0"
   },
   "dependencies": {
-    "@liamegan1/fxhash-helpers": "^0.0.9",
-    "wtc-gl": "^1.0.0-beta.42",
-    "wtc-math": "^1.0.14"
+    "@liamegan1/fxhash-helpers": "^0.0.9"
   }
 }

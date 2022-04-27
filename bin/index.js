@@ -7,10 +7,9 @@ const path = require("path");
 const execa = require("execa");
 const { copy, remove } = require("fs-extra");
 const chalk = require("chalk");
-const { logger } = require("@wethegit/sweet-potato-utensils");
 
+const logger = require("../lib/logger");
 const validateArgs = require("../lib/validateArgs");
-const getRepoInfo = require("../lib/getRepoInfo");
 const cleanProject = require("../lib/cleanProject");
 const installProcess = require("../lib/installProcess");
 const pkg = require("../package.json");
@@ -42,54 +41,15 @@ const isBaseTemplate = listOfBaseTemplates.find((file) => {
   logger.start("Architecting new project");
   logger.announce(`Creating a new project in ${chalk.cyan(targetDirectory)}`);
   logger.announce(`Using template ${chalk.cyan(template)}`);
-  // fetch from npm or GitHub if not local (which will be most of the time)
-  if (!isBaseTemplate) {
-    const templateInfo = await getRepoInfo(template);
+  
+  // creates project directory
+  fs.mkdirSync(targetDirectoryRelative, { recursive: true });
 
-    try {
-      // creates the project directory with a temp directory
-      const tempPath = path.join(targetDirectoryRelative, "temp");
-      fs.mkdirSync(tempPath, { recursive: true });
+  // copy base template
+  await copy(isBaseTemplate, targetDirectory);
 
-      // clone template
-      // only the specified branch and nothing else
-      await execa(
-        "git",
-        [
-          "clone",
-          "--single-branch",
-          "--branch",
-          templateInfo.branch,
-          `git@github.com:${templateInfo.username}/${templateInfo.name}.git`,
-          tempPath,
-        ],
-        {
-          all: true,
-        }
-      );
-
-      // remove the .git from the cloned template
-      await remove(path.join(tempPath, ".git"));
-
-      // copy everything to the main directory
-      await copy(tempPath, targetDirectory);
-
-      // deletes temp path
-      await remove(tempPath);
-    } catch (err) {
-      // Only log output if the command failed
-      exitWithError("Failed to clone template", err);
-    }
-  } else {
-    // creates project directory
-    fs.mkdirSync(targetDirectoryRelative, { recursive: true });
-
-    // copy base template
-    await copy(isBaseTemplate, targetDirectory);
-
-    // deletes and append necessary packages
-    await cleanProject(targetDirectory);
-  }
+  // deletes and append necessary packages
+  await cleanProject(targetDirectory);
 
   if (toInstall) {
     logger.announce(
@@ -118,7 +78,7 @@ const isBaseTemplate = listOfBaseTemplates.find((file) => {
     return "  " + command.padEnd(17) + chalk.dim(description);
   };
 
-  logger.finish("Project peeled 🍠");
+  logger.finish("Project set up. Happy hashing #️⃣");
   console.log(``);
 
   // quick help message
@@ -136,7 +96,7 @@ const isBaseTemplate = listOfBaseTemplates.find((file) => {
   console.log(
     formatCommand(
       `${installer} run build`,
-      "Build your website for production."
+      "Build your token for production."
     )
   );
   console.log(``);
