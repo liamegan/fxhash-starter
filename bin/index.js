@@ -73,10 +73,12 @@ const isBaseTemplate = listOfBaseTemplates.find((file) => {
     }
   } else logger.announce(`Skipping "${installer} install" step`);
 
-  await execa("npm", ["init"], {
-    cwd: targetDirectory,
-    stdio: "inherit",
-  }).stdout.pipe(process.stdout);
+  // Removing this for now as it feels a little unecessary
+  // 2022-04-28
+  // await execa("npm", ["init"], {
+  //   cwd: targetDirectory,
+  //   stdio: "inherit",
+  // }).stdout.pipe(process.stdout);
 
   // builds competion message
   const formatCommand = function (command, description) {
