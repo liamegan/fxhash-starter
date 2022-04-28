@@ -2,10 +2,16 @@
 
 Easily create a new fxhash project.
 
+## Requirements
+
+- node v12 - v16
+- npx
+- npm
+
 ## Usage
 
 ```sh
-$ npx @liamegan/fxhash-starter my-dir --template default
+$ npx @liamegan1/fxhash-starter my-dir
 $ cd my-dir
 $ npm start
 ```
