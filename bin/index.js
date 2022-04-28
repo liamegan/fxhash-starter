@@ -73,6 +73,11 @@ const isBaseTemplate = listOfBaseTemplates.find((file) => {
     }
   } else logger.announce(`Skipping "${installer} install" step`);
 
+  await execa("npm", ["init"], {
+    cwd: targetDirectory,
+    stdio: "inherit",
+  }).stdout.pipe(process.stdout);
+
   // builds competion message
   const formatCommand = function (command, description) {
     return "  " + command.padEnd(17) + chalk.dim(description);
