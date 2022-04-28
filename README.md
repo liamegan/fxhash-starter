@@ -2,6 +2,12 @@
 
 Easily create a new fxhash project.
 
+## Requirements
+
+- node v12 - v16
+- npx
+- npm
+
 ## Usage
 
 ```sh
