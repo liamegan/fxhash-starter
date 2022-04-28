@@ -10,6 +10,31 @@ discord: Riamu#3930
 twitter: @neuromantic6
 email: liam@wethecollective.com
 
+## Commands
+
+```
+$ npm start
+```
+This will open a webserver and will watch all of your files for changes and automatically update them
+
+```
+$ npm build
+```
+This will build your project to the dist folder, ready to be zipped and made into a token.
+
+## Project structure
+
+```
+.
+├── public            Contains any files you need to include in your dist folder that aren't explicitely referenced in src.
+│   └── LICENCE.md    Add your licence information to this file, it will be included in the project root.
+├── src               All of your source files shoudl go here, including any images you're referencing in your project
+│   ├── index.html    The index HTML
+│   └── index.js      Your boilerplate javascript. You can import other modules into this.
+│   └── index.scss    This will compile to your CSS
+└── dist              This is where your project will be compiled to
+```
+
 ## Before you mint
 
 ### Testing
