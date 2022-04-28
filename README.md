@@ -11,7 +11,7 @@ Easily create a new fxhash project.
 ## Usage
 
 ```sh
-$ npx @liamegan/fxhash-starter my-dir
+$ npx @liamegan1/fxhash-starter my-dir
 $ cd my-dir
 $ npm start
 ```
