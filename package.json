@@ -1,6 +1,6 @@
 {
   "name": "@liamegan1/fxhash-starter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Quickly scaffold an fxhash project",
   "main": "bin/index.js",
   "bin": {
